@@ -1,10 +1,415 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Test Page</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theekshana Tech Notes</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
+}
+
+/* Header */
+header{
+    background:#0f172a;
+    color:#fff;
+    padding:15px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* Hero */
+.hero{
+    background:linear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),
+    url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4');
+    background-size:cover;
+    background-position:center;
+    color:#fff;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.btn{
+    padding:12px 28px;
+    background:#38bdf8;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#0284c7;
+}
+
+/* Search */
+.search-section{
+    padding:40px 8%;
+    text-align:center;
+}
+
+.search-section input{
+    width:100%;
+    max-width:600px;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+/* Sections */
+section{
+    padding:70px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:2rem;
+    color:#0f172a;
+}
+
+/* About */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:12px;
+}
+
+/* Categories */
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0f172a;
+}
+
+/* Blog Posts */
+.posts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.post-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.post-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.post-content{
+    padding:20px;
+}
+
+.post-content h3{
+    margin-bottom:10px;
+}
+
+/* Contact */
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    margin-bottom:15px;
+}
+
+/* Footer */
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .nav-links{
+        display:none;
+        flex-direction:column;
+        background:#0f172a;
+        position:absolute;
+        top:70px;
+        left:0;
+        width:100%;
+        padding:20px;
+        text-align:center;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero h1{
+        font-size:2rem;
+    }
+}
+</style>
 </head>
+
 <body>
-<h1>Hello Theekshana</h1>
-<p>My website is working!</p>
+
+<header>
+<div class="navbar">
+<div class="logo">Theekshana Tech Notes</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#posts">Blog Posts</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<div class="menu" onclick="toggleMenu()">☰</div>
+</div>
+</header>
+
+<section class="hero">
+<h1>Practical IT Solutions & Technical Knowledge</h1>
+<p>
+Welcome to my technical blog where I share real-world experience,
+Microsoft 365 administration, Azure cloud solutions,
+Windows Server management, networking, cybersecurity,
+and troubleshooting guides.
+</p>
+
+<a href="#posts" class="btn">Explore Articles</a>
+</section>
+
+<div class="search-section">
+<input type="text" id="searchInput" placeholder="Search articles...">
+</div>
+
+<section id="about">
+<h2 class="section-title">About Me</h2>
+
+<div class="about">
+<div>
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+</div>
+
+<div>
+<h3>Theekshana Maddumage</h3>
+<p>
+Senior System Engineer with experience in enterprise infrastructure,
+Microsoft technologies, networking, cloud computing,
+cybersecurity, and IT operations.
+</p>
+
+<br>
+
+<p>
+This website serves as a knowledge-sharing platform where I publish
+technical articles, implementation guides, certification notes,
+and troubleshooting solutions from real-world projects.
+</p>
+</div>
+</div>
+</section>
+
+<section id="categories">
+<h2 class="section-title">Technical Categories</h2>
+
+<div class="categories">
+
+<div class="card">
+<h3>Microsoft 365</h3>
+<p>Exchange Online, Teams, SharePoint & Entra ID.</p>
+</div>
+
+<div class="card">
+<h3>Windows Server</h3>
+<p>Active Directory, DNS, DHCP & Hyper-V.</p>
+</div>
+
+<div class="card">
+<h3>Azure Cloud</h3>
+<p>Azure administration & cloud solutions.</p>
+</div>
+
+<div class="card">
+<h3>Networking</h3>
+<p>Routing, switching, VPN & firewall solutions.</p>
+</div>
+
+<div class="card">
+<h3>Cyber Security</h3>
+<p>Security best practices and incident handling.</p>
+</div>
+
+<div class="card">
+<h3>Linux</h3>
+<p>Ubuntu administration and shell scripting.</p>
+</div>
+
+</div>
+</section>
+
+<section id="posts">
+<h2 class="section-title">Featured Articles</h2>
+
+<div class="posts">
+
+<div class="post-card">
+<img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa">
+<div class="post-content">
+<h3>Microsoft 365 Administration Guide</h3>
+<p>Best practices for tenant administration.</p>
+</div>
+</div>
+
+<div class="post-card">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31">
+<div class="post-content">
+<h3>Azure Infrastructure Deployment</h3>
+<p>Deploy and secure Azure resources.</p>
+</div>
+</div>
+
+<div class="post-card">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
+<div class="post-content">
+<h3>Active Directory Troubleshooting</h3>
+<p>Common issues and practical solutions.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2 class="section-title">Contact</h2>
+
+<p>Connect with me for professional networking and technical discussion.</p>
+
+<p>Email: your-email@example.com</p>
+<p>LinkedIn: linkedin.com/in/theekshana</p>
+</section>
+
+<footer>
+<p>© 2026 Theekshana Tech Notes | Built for IT Professionals</p>
+</footer>
+
+<script>
+function toggleMenu() {
+    document.getElementById("navLinks")
+        .classList.toggle("active");
+}
+
+// Search Posts
+document.getElementById("searchInput")
+.addEventListener("keyup", function(){
+
+let search = this.value.toLowerCase();
+let posts = document.querySelectorAll(".post-card");
+
+posts.forEach(post => {
+
+let text = post.innerText.toLowerCase();
+
+if(text.includes(search)){
+post.style.display="block";
+}else{
+post.style.display="none";
+}
+
+});
+});
+</script>
+
 </body>
 </html>
