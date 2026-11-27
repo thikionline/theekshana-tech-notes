@@ -1,0 +1,415 @@
+!DOCTYPE html
+html lang=en
+head
+meta charset=UTF-8
+meta name=viewport content=width=device-width, initial-scale=1.0
+titleTheekshana Tech Notestitle
+
+link href=httpsfonts.googleapis.comcss2family=Poppinswght@300;400;500;600;700&display=swap rel=stylesheet
+
+style
+{
+    margin0;
+    padding0;
+    box-sizingborder-box;
+    font-family'Poppins',sans-serif;
+}
+
+body{
+    background#f5f7fa;
+    color#333;
+    line-height1.6;
+}
+
+ Header 
+header{
+    background#0f172a;
+    color#fff;
+    padding15px 8%;
+    positionsticky;
+    top0;
+    z-index1000;
+}
+
+.navbar{
+    displayflex;
+    justify-contentspace-between;
+    align-itemscenter;
+}
+
+.logo{
+    font-size1.4rem;
+    font-weight700;
+}
+
+.nav-links{
+    displayflex;
+    list-stylenone;
+    gap25px;
+}
+
+.nav-links a{
+    colorwhite;
+    text-decorationnone;
+    transition.3s;
+}
+
+.nav-links ahover{
+    color#38bdf8;
+}
+
+.menu{
+    displaynone;
+    font-size28px;
+    cursorpointer;
+}
+
+ Hero 
+.hero{
+    backgroundlinear-gradient(rgba(15,23,42,.85),rgba(15,23,42,.85)),
+    url('httpsimages.unsplash.comphoto-1515879218367-8466d910aaa4');
+    background-sizecover;
+    background-positioncenter;
+    color#fff;
+    text-aligncenter;
+    padding100px 20px;
+}
+
+.hero h1{
+    font-size3rem;
+    margin-bottom15px;
+}
+
+.hero p{
+    max-width750px;
+    marginauto;
+    margin-bottom30px;
+}
+
+.btn{
+    padding12px 28px;
+    background#38bdf8;
+    colorwhite;
+    text-decorationnone;
+    border-radius6px;
+}
+
+.btnhover{
+    background#0284c7;
+}
+
+ Search 
+.search-section{
+    padding40px 8%;
+    text-aligncenter;
+}
+
+.search-section input{
+    width100%;
+    max-width600px;
+    padding15px;
+    border1px solid #ccc;
+    border-radius8px;
+}
+
+ Sections 
+section{
+    padding70px 8%;
+}
+
+.section-title{
+    text-aligncenter;
+    margin-bottom50px;
+    font-size2rem;
+    color#0f172a;
+}
+
+ About 
+.about{
+    displaygrid;
+    grid-template-columns1fr 1fr;
+    gap40px;
+    align-itemscenter;
+}
+
+.about img{
+    width100%;
+    border-radius12px;
+}
+
+ Categories 
+.categories{
+    displaygrid;
+    grid-template-columnsrepeat(auto-fit,minmax(220px,1fr));
+    gap25px;
+}
+
+.card{
+    backgroundwhite;
+    padding25px;
+    border-radius12px;
+    box-shadow0 5px 15px rgba(0,0,0,.08);
+    transition.3s;
+}
+
+.cardhover{
+    transformtranslateY(-5px);
+}
+
+.card h3{
+    margin-bottom15px;
+    color#0f172a;
+}
+
+ Blog Posts 
+.posts{
+    displaygrid;
+    grid-template-columnsrepeat(auto-fit,minmax(300px,1fr));
+    gap25px;
+}
+
+.post-card{
+    backgroundwhite;
+    border-radius12px;
+    overflowhidden;
+    box-shadow0 5px 15px rgba(0,0,0,.08);
+}
+
+.post-card img{
+    width100%;
+    height220px;
+    object-fitcover;
+}
+
+.post-content{
+    padding20px;
+}
+
+.post-content h3{
+    margin-bottom10px;
+}
+
+ Contact 
+.contact{
+    text-aligncenter;
+}
+
+.contact p{
+    margin-bottom15px;
+}
+
+ Footer 
+footer{
+    background#0f172a;
+    colorwhite;
+    text-aligncenter;
+    padding25px;
+}
+
+ Mobile 
+@media(max-width768px){
+
+    .about{
+        grid-template-columns1fr;
+    }
+
+    .nav-links{
+        displaynone;
+        flex-directioncolumn;
+        background#0f172a;
+        positionabsolute;
+        top70px;
+        left0;
+        width100%;
+        padding20px;
+        text-aligncenter;
+    }
+
+    .nav-links.active{
+        displayflex;
+    }
+
+    .menu{
+        displayblock;
+    }
+
+    .hero h1{
+        font-size2rem;
+    }
+}
+style
+head
+
+body
+
+header
+div class=navbar
+div class=logoTheekshana Tech Notesdiv
+
+ul class=nav-links id=navLinks
+lia href=#Homeali
+lia href=#aboutAboutali
+lia href=#categoriesCategoriesali
+lia href=#postsBlog Postsali
+lia href=#contactContactali
+ul
+
+div class=menu onclick=toggleMenu()☰div
+div
+header
+
+section class=hero
+h1Practical IT Solutions & Technical Knowledgeh1
+p
+Welcome to my technical blog where I share real-world experience,
+Microsoft 365 administration, Azure cloud solutions,
+Windows Server management, networking, cybersecurity,
+and troubleshooting guides.
+p
+
+a href=#posts class=btnExplore Articlesa
+section
+
+div class=search-section
+input type=text id=searchInput placeholder=Search articles...
+div
+
+section id=about
+h2 class=section-titleAbout Meh2
+
+div class=about
+div
+img src=httpsimages.unsplash.comphoto-1504384308090-c894fdcc538d alt=
+div
+
+div
+h3Theekshana Maddumageh3
+p
+Senior System Engineer with experience in enterprise infrastructure,
+Microsoft technologies, networking, cloud computing,
+cybersecurity, and IT operations.
+p
+
+br
+
+p
+This website serves as a knowledge-sharing platform where I publish
+technical articles, implementation guides, certification notes,
+and troubleshooting solutions from real-world projects.
+p
+div
+div
+section
+
+section id=categories
+h2 class=section-titleTechnical Categoriesh2
+
+div class=categories
+
+div class=card
+h3Microsoft 365h3
+pExchange Online, Teams, SharePoint & Entra ID.p
+div
+
+div class=card
+h3Windows Serverh3
+pActive Directory, DNS, DHCP & Hyper-V.p
+div
+
+div class=card
+h3Azure Cloudh3
+pAzure administration & cloud solutions.p
+div
+
+div class=card
+h3Networkingh3
+pRouting, switching, VPN & firewall solutions.p
+div
+
+div class=card
+h3Cyber Securityh3
+pSecurity best practices and incident handling.p
+div
+
+div class=card
+h3Linuxh3
+pUbuntu administration and shell scripting.p
+div
+
+div
+section
+
+section id=posts
+h2 class=section-titleFeatured Articlesh2
+
+div class=posts
+
+div class=post-card
+img src=httpsimages.unsplash.comphoto-1451187580459-43490279c0fa
+div class=post-content
+h3Microsoft 365 Administration Guideh3
+pBest practices for tenant administration.p
+div
+div
+
+div class=post-card
+img src=httpsimages.unsplash.comphoto-1558494949-ef010cbdcc31
+div class=post-content
+h3Azure Infrastructure Deploymenth3
+pDeploy and secure Azure resources.p
+div
+div
+
+div class=post-card
+img src=httpsimages.unsplash.comphoto-1516321318423-f06f85e504b3
+div class=post-content
+h3Active Directory Troubleshootingh3
+pCommon issues and practical solutions.p
+div
+div
+
+div
+section
+
+section id=contact class=contact
+h2 class=section-titleContacth2
+
+pConnect with me for professional networking and technical discussion.p
+
+pEmail your-email@example.comp
+pLinkedIn linkedin.comintheekshanap
+section
+
+footer
+p© 2026 Theekshana Tech Notes  Built for IT Professionalsp
+footer
+
+script
+function toggleMenu() {
+    document.getElementById(navLinks)
+        .classList.toggle(active);
+}
+
+ Search Posts
+document.getElementById(searchInput)
+.addEventListener(keyup, function(){
+
+let search = this.value.toLowerCase();
+let posts = document.querySelectorAll(.post-card);
+
+posts.forEach(post = {
+
+let text = post.innerText.toLowerCase();
+
+if(text.includes(search)){
+post.style.display=block;
+}else{
+post.style.display=none;
+}
+
+});
+});
+script
+
+body
+html
